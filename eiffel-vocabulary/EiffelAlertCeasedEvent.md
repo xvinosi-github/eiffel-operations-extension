@@ -1,5 +1,5 @@
-s<!---
-   Copyright 2017 Ericsson AB.
+<!---
+   Copyright 2018 Ericsson AB.
    For a full list of individual contributors, please see the commit history.
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,20 +21,10 @@ The EiffelAlertCeasedEvent event is typically used to communicate that a previou
 This information can then be favorably displayed in visualization and dashboard applications.
 
 ## Data Members
-### data.heading
-__Type:__ String  
-__Required:__ Yes  
-__Description:__ The heading of the ceased incident.
-
-### data.body
-__Type:__ String  
-__Required:__ No  
-__Description:__ The body of the ceased incident.
-
 ### data.entity
 __Type:__ String  
 __Required:__ No  
-__Description:__ The identity of the entity that ceased the incident.
+__Description:__ The identity of the user or entity that ceased the alert.
 
 ### data.uri
 __Type:__ String  
@@ -42,7 +32,7 @@ __Required:__ No
 __Description:__ A URI where further information can be obtained, if available.
 
 ##Legal Link Types
-### CAUSE
-__Legal targets:__ Any  
-__Multiple allowed:__ Yes  
-__Description:__ Identifies a cause of the event occurring. SHOULD not be used in conjunction with __CONTEXT__: individual events providing __CAUSE__ within a larger context gives rise to ambiguity. It is instead recommended to let the root event of the context declare __CAUSE__.  
+### ALERT
+__Legal targets:__ [EiffelAlertRaisedEvent](https://github.com/Ericsson/eiffel-operations-extension/blob/master/eiffel-vocabulary/EiffelAlertRaisedEvent.md)  
+__Multiple allowed:__ No  
+__Description:__ Identifies a ALERT which has been ceased.
